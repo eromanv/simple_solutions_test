@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <script src="https://js.stripe.com/v3/"></script>
 <script>
@@ -13,21 +14,20 @@
         .then(session => stripe.redirectToCheckout({ sessionId: session.id }))
     }
 </script>
-<body>
-{% block content %}
-<p>
-название: {{ item.name }}
-</p>
-<p>
-описание: {{ item.description }}
-</p>
-<p>
-цена: {{ item.price }}
-</p>
- <button type="button" onclick="createCheckoutSession()">Buy</button>
-
-{% endblock content %}
+<body class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    {% block content %}
+                    <h2>{{ item.name }}</h2>
+                    <p>{{ item.description }}</p>
+                    <p>Price: ${{ item.price }}</p>
+                    <button class="btn btn-primary" onclick="createCheckoutSession()">Buy Now</button>
+                    {% endblock content %}
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-
-
 </html>
