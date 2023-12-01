@@ -1,0 +1,32 @@
+[
+{
+    "model": "stripe_simple.item",
+    "pk": 1,
+    "fields": {
+        "name": "книга",
+        "description": "интересная книга",
+        "price": 100,
+        "stripe_price_id": "price_1M5FNrAOiYw02tQNzznQlbYq"
+    }
+},
+{
+    "model": "stripe_simple.item",
+    "pk": 2,
+    "fields": {
+        "name": "мобильник",
+        "description": "смартфон",
+        "price": 10000,
+        "stripe_price_id": "price_1M5FxnAOiYw02tQNUnyw2LsM"
+    }
+},
+{
+    "model": "stripe_simple.item",
+    "pk": 3,
+    "fields": {
+        "name": "телевизор",
+        "description": "самсунг",
+        "price": 5000,
+        "stripe_price_id": "price_1M5FY1AOiYw02tQNDocCBIfw"
+    }
+}
+]

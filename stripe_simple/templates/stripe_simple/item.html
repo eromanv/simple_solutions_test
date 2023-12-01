@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    var stripe = Stripe('pk_test_51M5Ej5AOiYw02tQNODQIZcVlMHpQwLf8ThvFGt1vB96eAjXxR6jUzKC7ngioFL3SkTXjnmLhyhrSxk6xd2Sw6kHK00FH2Jo0Ew');
+    function createCheckoutSession() {
+        fetch('/buy/{{ item.pk }}/', {method: 'GET'})
+        .then(response => response.json())
+        .then(session => stripe.redirectToCheckout({ sessionId: session.id }))
+    }
+</script>
+<body>
+{% block content %}
+<p>
+название: {{ item.name }}
+</p>
+<p>
+описание: {{ item.description }}
+</p>
+<p>
+цена: {{ item.price }}
+</p>
+ <button type="button" onclick="createCheckoutSession()">Buy</button>
+
+{% endblock content %}
+</body>
+
+
+</html>
