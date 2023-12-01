@@ -15,7 +15,8 @@ cd ваш-репозиторий
 
 ## Установите зависимости:
 
-```pip install -r requirements.txt
+```
+pip install -r requirements.txt
 ```
 
 ## Примените миграции базы данных:
